@@ -1,0 +1,151 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "heading": "Talk.\nIt’s written.",
+      "widths": [
+        360,
+        375,
+        390,
+        430,
+        768,
+        1024,
+        1440
+      ],
+      "status": "pass"
+    },
+    {
+      "route": "/students/",
+      "heading": "Record the lecture.\nRead the notes.",
+      "widths": [
+        360,
+        375,
+        390,
+        430,
+        768,
+        1024,
+        1440
+      ],
+      "status": "pass"
+    },
+    {
+      "route": "/meetings/",
+      "heading": "Every meeting, minuted by AI.",
+      "widths": [
+        360,
+        375,
+        390,
+        430,
+        768,
+        1024,
+        1440
+      ],
+      "status": "pass"
+    },
+    {
+      "route": "/writers/",
+      "heading": "Draft at the speed of speech.",
+      "widths": [
+        360,
+        375,
+        390,
+        430,
+        768,
+        1024,
+        1440
+      ],
+      "status": "pass"
+    }
+  ],
+  "checks": [
+    "The invitation appears once, carries its own CTA, and closes on demand.",
+    "Explicit CTA clicks emit once with correct placements; attribution retains repeated parameters; sticky hides at final CTA.",
+    "StoryBeat a-e and ScrollDepth 50/90 fire exactly once per page view.",
+    "Text, demo card, FAQ and use-case card taps do not navigate.",
+    "All four use-case cards render their content without relying on an animation.",
+    "Reduced motion shows static captions and final states.",
+    "8 smart-link CTAs all point at the configured deep link.",
+    "iPhone Instagram and Android Facebook user-agent labels pass. Real native webviews still require devices.",
+    "Static content and the smart-link CTA work without JavaScript (query propagation needs JavaScript)."
+  ],
+  "errors": [],
+  "accessibility": [],
+  "events": [
+    {
+      "name": "ClickToStore",
+      "params": {
+        "placement": "hero",
+        "os": "ios",
+        "variant": "default"
+      }
+    },
+    {
+      "name": "ClickToStore",
+      "params": {
+        "placement": "sticky",
+        "os": "ios",
+        "variant": "default"
+      }
+    },
+    {
+      "name": "ScrollDepth",
+      "params": {
+        "depth": 50
+      }
+    },
+    {
+      "name": "StoryBeat",
+      "params": {
+        "beat": "a"
+      }
+    },
+    {
+      "name": "StoryBeat",
+      "params": {
+        "beat": "b"
+      }
+    },
+    {
+      "name": "StoryBeat",
+      "params": {
+        "beat": "c"
+      }
+    },
+    {
+      "name": "StoryBeat",
+      "params": {
+        "beat": "d"
+      }
+    },
+    {
+      "name": "StoryBeat",
+      "params": {
+        "beat": "e"
+      }
+    },
+    {
+      "name": "ScrollDepth",
+      "params": {
+        "depth": 90
+      }
+    },
+    {
+      "name": "ClickToStore",
+      "params": {
+        "placement": "final",
+        "os": "ios",
+        "variant": "default"
+      }
+    },
+    {
+      "name": "ClickToStore",
+      "params": {
+        "placement": "badge",
+        "os": "ios",
+        "variant": "default"
+      }
+    }
+  ],
+  "cls": 0,
+  "status": "pass"
+}

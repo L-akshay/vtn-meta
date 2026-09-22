@@ -1,0 +1,8 @@
+{
+  "status": "pass",
+  "checks": [
+    "Out-and-back drag does not navigate or track.",
+    "Modified whitespace click does not navigate.",
+    "Intentional whitespace click navigates once, preserves attribution and emits one page-placement event."
+  ]
+}

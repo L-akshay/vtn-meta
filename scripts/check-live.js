@@ -1,0 +1,1 @@
+JSON.stringify({ clarity: typeof window.clarity, clarityScripts: [...document.scripts].filter(s=>s.src.includes('clarity.ms')).length, metaScripts: [...document.scripts].filter(s=>s.src.includes('fbevents')).length });

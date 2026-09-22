@@ -1,0 +1,43 @@
+"use client";
+
+import { useEffect } from "react";
+import { navigateToStore } from "../lib/navigateToStore";
+
+function hasTextSelection() {
+  return Boolean(window.getSelection()?.toString().trim());
+}
+
+export function useGlobalStoreClick() {
+  useEffect(() => {
+    function onClick(event: MouseEvent) {
+      if (event.defaultPrevented || event.button !== 0) return;
+      if (hasTextSelection()) return;
+
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+
+      if (
+        target.closest(
+          [
+            "a",
+            "button",
+            "footer",
+            "input",
+            "select",
+            "textarea",
+            "label",
+            "[role='button']",
+            "[data-global-click-exempt]",
+          ].join(","),
+        )
+      ) {
+        return;
+      }
+
+      navigateToStore("page");
+    }
+
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
+}

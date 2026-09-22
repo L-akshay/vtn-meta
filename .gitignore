@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+*.tsbuildinfo
+.impeccable/review/
+docs/reference-site.html
+docs/apple-listing.json
+docs/source-assets/
+*.log
+
+.lighthouseci/
+docs/lhci/

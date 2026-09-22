@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-22T14:12:09.502466+00:00",
+  "title": "Design System: VoiceToNotes",
+  "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "White canvas",
+        "tonalRamp": [
+          "oklch(15% 0.00000 0.00)",
+          "oklch(26% 0.00000 0.00)",
+          "oklch(38% 0.00000 0.00)",
+          "oklch(49% 0.00000 0.00)",
+          "oklch(61% 0.00000 0.00)",
+          "oklch(72% 0.00000 0.00)",
+          "oklch(84% 0.00000 0.00)",
+          "oklch(95% 0.00000 0.00)"
+        ]
+      },
+      "bg-2": {
+        "role": "neutral",
+        "displayName": "Cool stage",
+        "tonalRamp": [
+          "oklch(15% 0.00265 286.35)",
+          "oklch(26% 0.00265 286.35)",
+          "oklch(38% 0.00265 286.35)",
+          "oklch(49% 0.00265 286.35)",
+          "oklch(61% 0.00265 286.35)",
+          "oklch(72% 0.00265 286.35)",
+          "oklch(84% 0.00265 286.35)",
+          "oklch(95% 0.00265 286.35)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Charcoal ink",
+        "tonalRamp": [
+          "oklch(15% 0.00381 286.10)",
+          "oklch(26% 0.00381 286.10)",
+          "oklch(38% 0.00381 286.10)",
+          "oklch(49% 0.00381 286.10)",
+          "oklch(61% 0.00381 286.10)",
+          "oklch(72% 0.00381 286.10)",
+          "oklch(84% 0.00381 286.10)",
+          "oklch(95% 0.00381 286.10)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Soft gray ink",
+        "tonalRamp": [
+          "oklch(15% 0.00769 286.14)",
+          "oklch(26% 0.00769 286.14)",
+          "oklch(38% 0.00769 286.14)",
+          "oklch(49% 0.00769 286.14)",
+          "oklch(61% 0.00769 286.14)",
+          "oklch(72% 0.00769 286.14)",
+          "oklch(84% 0.00769 286.14)",
+          "oklch(95% 0.00769 286.14)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline gray",
+        "tonalRamp": [
+          "oklch(15% 0.00683 286.26)",
+          "oklch(26% 0.00683 286.26)",
+          "oklch(38% 0.00683 286.26)",
+          "oklch(49% 0.00683 286.26)",
+          "oklch(61% 0.00683 286.26)",
+          "oklch(72% 0.00683 286.26)",
+          "oklch(84% 0.00683 286.26)",
+          "oklch(95% 0.00683 286.26)"
+        ]
+      },
+      "action": {
+        "role": "primary",
+        "displayName": "Action raspberry",
+        "tonalRamp": [
+          "oklch(15% 0.22174 18.99)",
+          "oklch(26% 0.22174 18.99)",
+          "oklch(38% 0.22174 18.99)",
+          "oklch(49% 0.22174 18.99)",
+          "oklch(61% 0.22174 18.99)",
+          "oklch(72% 0.22174 18.99)",
+          "oklch(84% 0.22174 18.99)",
+          "oklch(95% 0.22174 18.99)"
+        ]
+      },
+      "action-hover": {
+        "role": "primary",
+        "displayName": "Deep action raspberry",
+        "tonalRamp": [
+          "oklch(15% 0.19874 19.41)",
+          "oklch(26% 0.19874 19.41)",
+          "oklch(38% 0.19874 19.41)",
+          "oklch(49% 0.19874 19.41)",
+          "oklch(61% 0.19874 19.41)",
+          "oklch(72% 0.19874 19.41)",
+          "oklch(84% 0.19874 19.41)",
+          "oklch(95% 0.19874 19.41)"
+        ]
+      },
+      "showcase": {
+        "role": "neutral",
+        "displayName": "Black stage",
+        "tonalRamp": [
+          "oklch(15% 0.00000 0.00)",
+          "oklch(26% 0.00000 0.00)",
+          "oklch(38% 0.00000 0.00)",
+          "oklch(49% 0.00000 0.00)",
+          "oklch(61% 0.00000 0.00)",
+          "oklch(72% 0.00000 0.00)",
+          "oklch(84% 0.00000 0.00)",
+          "oklch(95% 0.00000 0.00)"
+        ]
+      },
+      "showcase-muted": {
+        "role": "neutral",
+        "displayName": "Stage supporting ink",
+        "tonalRamp": [
+          "oklch(15% 0.00861 286.18)",
+          "oklch(26% 0.00861 286.18)",
+          "oklch(38% 0.00861 286.18)",
+          "oklch(49% 0.00861 286.18)",
+          "oklch(61% 0.00861 286.18)",
+          "oklch(72% 0.00861 286.18)",
+          "oklch(84% 0.00861 286.18)",
+          "oklch(95% 0.00861 286.18)"
+        ]
+      },
+      "note-paper": {
+        "role": "neutral",
+        "displayName": "Note paper",
+        "tonalRamp": [
+          "oklch(15% 0.00132 286.38)",
+          "oklch(26% 0.00132 286.38)",
+          "oklch(38% 0.00132 286.38)",
+          "oklch(49% 0.00132 286.38)",
+          "oklch(61% 0.00132 286.38)",
+          "oklch(72% 0.00132 286.38)",
+          "oklch(84% 0.00132 286.38)",
+          "oklch(95% 0.00132 286.38)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Mobile display",
+        "purpose": "Default hero; audience variants use a smaller mobile treatment."
+      },
+      "display-wide": {
+        "displayName": "Wide display",
+        "purpose": "Hero at widths of 768px and above."
+      },
+      "headline": {
+        "displayName": "Section headline",
+        "purpose": "Base mobile section heading, with larger desktop variants."
+      },
+      "title": {
+        "displayName": "Workflow title",
+        "purpose": "Numbered workflow headings."
+      },
+      "body": {
+        "displayName": "Section body",
+        "purpose": "Supporting section copy."
+      },
+      "body-compact": {
+        "displayName": "Compact body",
+        "purpose": "Audience-row supporting prose."
+      },
+      "label": {
+        "displayName": "Action label",
+        "purpose": "Primary and sticky download actions."
+      }
+    },
+    "shadows": [
+      {
+        "name": "phone",
+        "value": "0 28px 48px -24px rgb(0 0 0 / 35%)",
+        "purpose": "Illustrated hardware depth."
+      },
+      {
+        "name": "voice-annotation",
+        "value": "0 12px 32px -12px rgb(0 0 0 / 13%)",
+        "purpose": "Desktop speech artifact."
+      },
+      {
+        "name": "result-annotation",
+        "value": "0 12px 32px -12px rgb(0 0 0 / 15%)",
+        "purpose": "Desktop note artifact."
+      }
+    ],
+    "motion": [
+      {
+        "name": "action-transition",
+        "value": "background 160ms, transform 160ms",
+        "purpose": "Action hover and press states."
+      },
+      {
+        "name": "state-crossfade",
+        "value": "opacity 200ms",
+        "purpose": "Showcase copy and screen transitions."
+      },
+      {
+        "name": "word-reveal",
+        "value": ".15s ease-out backwards",
+        "purpose": "One-shot transcript reveal, with per-word delays."
+      },
+      {
+        "name": "summary-entrance",
+        "value": ".5s cubic-bezier(.16,1,.3,1) 1.6s backwards",
+        "purpose": "Summary appears after transcript."
+      },
+      {
+        "name": "waveform",
+        "value": ".5s ease-in-out 3 alternate",
+        "purpose": "Finite recording waveform motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide",
+        "value": "768px"
+      },
+      {
+        "name": "large",
+        "value": "1100px"
+      },
+      {
+        "name": "short-viewport-max-height",
+        "value": "760px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary download action",
+      "kind": "button",
+      "description": "Full-width app action with darkened hover, press feedback, and visible keyboard focus.",
+      "html": "<a class=\"ds-primary\" href=\"#download\">Get VoiceToNotes</a>",
+      "css": ".ds-primary {font-family:var(--font-geist,Geist),sans-serif;display:flex;align-items:center;justify-content:center;min-height:56px;width:100%;padding:14px 20px;border-radius:var(--radius,12px);background:var(--action,#db123f);color:var(--bg,#ffffff);font-size:16px;font-weight:600;line-height:24px;text-decoration:none;transition:background 160ms,transform 160ms;}.ds-primary:hover{background:var(--action-hover,#bc0b33);}.ds-primary:active{transform:scale(.985);}.ds-primary:focus-visible,.ds-sticky:focus-visible,.ds-control:focus-visible,.ds-row:focus-visible,.ds-nav a:focus-visible {outline:3px solid var(--action,#db123f);outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none;}}",
+      "refersTo": "button-primary"
+    },
+    {
+      "name": "Compact mobile action",
+      "kind": "button",
+      "description": "Full-width app action with darkened hover, press feedback, and visible keyboard focus.",
+      "html": "<a class=\"ds-sticky\" href=\"#download\">Get VoiceToNotes</a>",
+      "css": ".ds-sticky {font-family:var(--font-geist,Geist),sans-serif;display:flex;align-items:center;justify-content:center;min-height:48px;width:100%;padding:10px 20px;border-radius:var(--radius,12px);background:var(--action,#db123f);color:var(--bg,#ffffff);font-size:16px;font-weight:600;line-height:24px;text-decoration:none;transition:background 160ms,transform 160ms;}.ds-sticky:hover{background:var(--action-hover,#bc0b33);}.ds-sticky:active{transform:scale(.985);}.ds-primary:focus-visible,.ds-sticky:focus-visible,.ds-control:focus-visible,.ds-row:focus-visible,.ds-nav a:focus-visible {outline:3px solid var(--action,#db123f);outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-sticky{transition:none;}}",
+      "refersTo": "button-sticky"
+    },
+    {
+      "name": "Transformation controls",
+      "kind": "nav",
+      "description": "Text controls on a black stage; selection is encoded by text and a lower rule.",
+      "html": "<nav class=\"ds-controls\" aria-label=\"Explore note transformations\"><button class=\"ds-control\" aria-pressed=\"true\">Live</button><button class=\"ds-control\" aria-pressed=\"false\">Clean up</button><button class=\"ds-control\" aria-pressed=\"false\">Summary</button><button class=\"ds-control\" aria-pressed=\"false\">Rephrase</button></nav>",
+      "css": ".ds-controls{font-family:var(--font-geist,Geist),sans-serif;display:flex;justify-content:space-between;background:#000;border-bottom:1px solid #373739;}.ds-control{font-family:var(--font-geist,Geist),sans-serif;background:transparent;border:0;border-bottom:2px solid transparent;color:#a2a2a8;min-height:48px;padding:8px 0;font-size:11px;cursor:pointer;}.ds-control[aria-pressed=\"true\"]{color:white;border-color:white;}.ds-primary:focus-visible,.ds-sticky:focus-visible,.ds-control:focus-visible,.ds-row:focus-visible,.ds-nav a:focus-visible {outline:3px solid var(--action,#db123f);outline-offset:5px;}",
+      "refersTo": "showcase-control"
+    },
+    {
+      "name": "Audience navigation row",
+      "kind": "nav",
+      "description": "Flat linked content row with a directional vector icon.",
+      "html": "<a class=\"ds-row\" href=\"#students\"><div><h3>Be in the lecture.</h3><p>Leave the typing behind. Capture the lesson and come back to the important parts.</p><span>Explore notes for students</span></div><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"23\" height=\"23\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 7h10v10M7 17 17 7\"/></svg></a>",
+      "css": ".ds-row{font-family:var(--font-geist,Geist),sans-serif;display:grid;grid-template-columns:1fr 24px;gap:12px;border-top:1px solid var(--line,#d2d2d7);padding:27px 0 31px;color:var(--ink,#1d1d1f);text-decoration:none;}.ds-row h3{margin:0;font-size:23px;font-weight:500;line-height:1.2;letter-spacing:-.025em;}.ds-row p{margin:11px 0 0;font-size:14px;line-height:23px;max-width:43ch;color:var(--ink-2,#6e6e73);}.ds-row span{display:block;font-size:11px;margin-top:20px;color:var(--ink-2,#6e6e73);}.ds-row>svg{margin-top:1px;transition:transform 180ms;}.ds-row:hover>svg{transform:translate(3px,-3px);}.ds-primary:focus-visible,.ds-sticky:focus-visible,.ds-control:focus-visible,.ds-row:focus-visible,.ds-nav a:focus-visible {outline:3px solid var(--action,#db123f);outline-offset:5px;}@media(prefers-reduced-motion:reduce){.ds-row>svg{transition:none;}}",
+      "refersTo": "campaign-row"
+    },
+    {
+      "name": "Footer text navigation",
+      "kind": "nav",
+      "description": "Quiet legal navigation uses an underline on hover and generous touch height.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Legal\"><a href=\"#privacy\">Privacy</a><a href=\"#terms\">Terms</a></nav>",
+      "css": ".ds-nav{font-family:var(--font-geist,Geist),sans-serif;display:flex;gap:18px;color:var(--ink,#1d1d1f);}.ds-nav a{display:inline-flex;align-items:center;min-height:48px;font-size:11px;color:inherit;text-decoration:none;text-underline-offset:5px;}.ds-nav a:hover{text-decoration:underline;}.ds-primary:focus-visible,.ds-sticky:focus-visible,.ds-control:focus-visible,.ds-row:focus-visible,.ds-nav a:focus-visible {outline:3px solid var(--action,#db123f);outline-offset:5px;}"
+    },
+    {
+      "name": "Recording tray",
+      "kind": "card",
+      "description": "Small bordered product surface; waveform and elapsed time are functional recording detail.",
+      "html": "<div class=\"ds-tray\"><div class=\"ds-wave\" aria-hidden=\"true\"><span style=\"height:10px\"></span><span style=\"height:17px\"></span><span style=\"height:29px\"></span><span style=\"height:20px\"></span><span style=\"height:12px\"></span><span style=\"height:34px\"></span><span style=\"height:25px\"></span><span style=\"height:16px\"></span><span style=\"height:28px\"></span><span style=\"height:37px\"></span><span style=\"height:22px\"></span><span style=\"height:12px\"></span><span style=\"height:30px\"></span><span style=\"height:20px\"></span><span style=\"height:14px\"></span><span style=\"height:24px\"></span><span style=\"height:11px\"></span></div><div class=\"ds-recording-meta\"><span>Voice note</span><span>0:18</span></div></div>",
+      "css": ".ds-tray{font-family:var(--font-geist,Geist),sans-serif;border:1px solid #e8e8ec;border-radius:14px;padding:10px 14px;background:var(--bg,#ffffff);}.ds-wave{display:flex;gap:3px;align-items:center;justify-content:center;height:37px;}.ds-wave span{display:block;width:3px;border-radius:3px;background:var(--action,#db123f);}.ds-recording-meta{display:flex;justify-content:space-between;color:var(--ink-2,#6e6e73);font-size:9px;margin-top:6px;font-variant-numeric:tabular-nums;}",
+      "refersTo": "recording-tray"
+    },
+    {
+      "name": "Illustrated note content",
+      "kind": "custom",
+      "description": "Product-specific hierarchy with a semantic date, title, and derived writing; tiny date text is local product metadata.",
+      "html": "<article class=\"ds-note\"><div class=\"ds-date\">Today <span>&middot;</span> Personal notes</div><div class=\"ds-note-title\">A useful thought</div><p>Capture the thought while it is fresh.</p><div class=\"ds-rule\"></div><div class=\"ds-note-heading\">Summary</div><p>Keep the important parts ready to revisit.</p></article>",
+      "css": ".ds-note{font-family:var(--font-geist,Geist),sans-serif;padding:21px 19px;background:#f7f7f8;color:var(--ink,#1d1d1f);font-size:12px;line-height:1.65;}.ds-date{font-size:9px;color:var(--ink-2,#6e6e73);margin-bottom:9px;}.ds-date span{margin-inline:4px;}.ds-note-title{font-size:21px;line-height:1.17;letter-spacing:-.035em;font-weight:600;text-wrap:pretty;margin-bottom:17px;}.ds-note p{margin:0;color:#4d4d52;}.ds-rule{height:1px;background:#dedee3;margin:15px 0 12px;}.ds-note-heading{font-size:11px;font-weight:650;margin:10px 0 7px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Product demonstration stage",
+    "overview": "VoiceToNotes uses a bright, quiet writing canvas: white and cool-gray surfaces, Geist typography, thin separators, and a restrained red action color. The official waveform and pencil identity and recognizable note editor give the system its product character.\n\nLarge sentence-case statements sit beside compact, concrete examples of useful writing. Most surfaces remain flat; depth belongs to the illustrated phone and its small supporting artifacts. A black demonstration surface creates a focused setting for the same product content without introducing a second visual identity.",
+    "keyCharacteristics": [
+      "Bright neutral canvas with a restrained action accent.",
+      "Tight sentence-case headlines and readable supporting prose.",
+      "Product-specific phone, note, and waveform details.",
+      "Thin separators, generous section space, and limited ambient depth.",
+      "Motion has a static, readable reduced-motion alternative."
+    ],
+    "rules": [
+      {
+        "name": "The Action Color Rule",
+        "body": "Use raspberry for actions and the voice waveform; let neutral surfaces carry the composition.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "Keep headings and actions in sentence case; hierarchy comes from size, weight, and spacing.",
+        "section": "typography"
+      },
+      {
+        "name": "The Product Depth Rule",
+        "body": "Reserve ambient lift for product artifacts; keep reading sections and linked rows flat.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** preserve the official wordmark, app identity, and recognizable note editor.",
+      "**Do** use raspberry for actions and the voice waveform, with neutral reading surfaces.",
+      "**Do** keep visible keyboard focus and the shipped reduced-motion content alternative.",
+      "**Do** disclose illustrative product content and retain meaningful note metadata within its product context.",
+      "**Do** keep short-viewport product content in document flow so the full example remains accessible."
+    ],
+    "donts": [
+      "**Don't** turn small phone metadata into a general landing-page body or heading style.",
+      "**Don't** add decorative eyebrows above section or audience headings.",
+      "**Don't** apply the phone's shadow to every section or navigation row.",
+      "**Don't** replace vector icons or the official identity with text glyph approximations.",
+      "**Don't** treat synthetic examples as testimonials or measured product proof."
+    ]
+  }
+}
