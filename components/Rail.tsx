@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { wavePath } from "@/lib/wave";
+import { WaveBars } from "./WaveBars";
 
 type Line = { text: string; speaker?: "a" | "b"; tag?: string; rewritten?: boolean };
 type Case = { key: string; title: string; outcome: string; lines: Line[]; speakers?: boolean };
@@ -29,16 +29,10 @@ const CASES: Case[] = [
   },
 ];
 
-/** A tiling waveform. The viewBox shows exactly one copy; two copies sit side by side and scroll
- *  by one full copy width, so the window is never empty and the loop is seamless. */
+/** A tiling recorder waveform: one copy wide, drawn twice, scrolled by exactly one copy. */
 function FlowWave({ second = false }: { second?: boolean }) {
-  const d = wavePath(320, 40, 56);
-  return <svg className={`rail-wave ${second ? "is-b" : ""}`} viewBox="0 0 320 40" preserveAspectRatio="none" aria-hidden="true">
-    <g className="rail-wave-flow">
-      <path d={d} fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
-      <path d={d} transform="translate(320 0)" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
-    </g>
-  </svg>;
+  return <WaveBars count={second ? 44 : 52} height={second ? 22 : 30} tile
+    className={`rail-wave ${second ? "is-b" : ""}`} groupClassName="rail-wave-flow" />;
 }
 
 /** Every card is visible at once and reads completely on its own. Only the waveform moves. */

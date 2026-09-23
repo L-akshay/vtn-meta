@@ -104,6 +104,20 @@ try {
   await page.goto(`${BASE}/?motion=off`);
   await page.locator('#hero-cta').waitFor();
   assert.equal(await page.locator('.story-reduced-captions').isVisible(), true);
+  // Anything that reveals itself by animating must not hide content when animation is off.
+  assert.equal(await page.locator('.h1-text').first().isVisible(), true, 'headline visible without motion');
+  const heroCovered = await page.evaluate(() => {
+    const veil = document.querySelector('.h1-veil');
+    if (!veil || getComputedStyle(veil).display === 'none') return false;
+    const v = veil.getBoundingClientRect(), t = document.querySelector('.h1-text').getBoundingClientRect();
+    return v.left <= t.left + 2 && v.right >= t.right - 2 && v.top <= t.top + 2 && v.bottom >= t.bottom - 2;
+  });
+  assert.equal(heroCovered, false, 'the headline is not covered by its veil when animation is off');
+  const heroInk = await page.evaluate(() => {
+    const r = document.querySelector('.h1-text').getBoundingClientRect();
+    return r.width > 40 && r.height > 20;
+  });
+  assert.equal(heroInk, true, 'headline occupies real space without motion');
   assert.equal(await page.locator('.story').evaluate(el => getComputedStyle(el).height !== `${innerHeight * 3.8}px`), true);
   await page.locator('.story').scrollIntoViewIfNeeded();
   await page.screenshot({ path: '.impeccable/review/reduced-motion.png' });

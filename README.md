@@ -4,6 +4,10 @@ Mobile-first paid-acquisition page for VoiceToNotes, built with Next.js 15 (stat
 
 One motif runs through every animation: **sound becomes text**. A waveform turns into words, and the words get cleaned into structure. Nothing else moves.
 
+Every waveform on the page is drawn as **discrete bars, not a continuous line**. A polyline reads as a line graph; voice recorders draw bars, and that is the thing being evoked. `lib/wave.ts` produces one deterministic set of normalised bar heights with speech-like dynamics (a slow phrase envelope, per-bar detail, and a floor so quiet passages stay visible rather than turning to dust). `components/WaveBars.tsx` renders it. Where a waveform scrolls continuously it needs the pattern twice side by side, and the second copy is a `<use>` reference rather than duplicated rects, which keeps the served HTML about 1.3 KB smaller.
+
+The hero card rests on that same recorded shape rather than a flat line, so a transcribed note looks like a take that was captured. Live amplitude modulates the shape instead of replacing it.
+
 ## Local development
 
 Use Node.js 22 or newer.
@@ -28,6 +32,18 @@ npm run preview
 - No Workers adapter, server, API route, middleware or runtime secrets are required.
 - `public/_headers` is copied to `out/_headers` (`X-Robots-Tag: noindex, nofollow`, security headers, immutable cache for `/_next/static/*`). Every page also carries robots metadata and `robots.txt` disallows crawling. Verify the response headers on the deployed origin; the local preview does not prove Cloudflare's behaviour.
 - Enable Cloudflare Web Analytics in the dashboard and let it inject its own beacon. Do not add a second one.
+
+## Vercel
+
+`public/_headers` is a **Cloudflare Pages** file and does nothing on Vercel, so `vercel.json` carries the same rules: `X-Robots-Tag: noindex, nofollow`, the security headers, and the immutable cache for `/_next/static/*`. Keep the two in step if either changes.
+
+After deploying, confirm the header is actually applied:
+
+```sh
+curl -sI https://<your-deployment>/ | grep -i x-robots-tag
+```
+
+The robots meta tag and `robots.txt` keep the page out of the index regardless, but the header is the strongest signal.
 
 ## Environment and analytics
 

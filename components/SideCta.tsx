@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { X } from "./icons";
-import { wavePath } from "@/lib/wave";
 import { StoreLink } from "./Conversion";
 
 /**
@@ -30,7 +29,6 @@ export function SideCta() {
   }, []);
 
   if (dismissed) return null;
-  const d = wavePath(320, 14, 48);
   return <aside ref={scope} className="side-cta" aria-label="Get VoiceToNotes" data-no-redirect data-global-click-exempt>
     <StoreLink placement="side" className="side-cta-link">
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -39,12 +37,6 @@ export function SideCta() {
         <span className="side-cta-name">Get VoiceToNotes free</span>
         <span className="side-cta-note">iPhone and Android</span>
       </span>
-      <svg className="side-cta-wave" viewBox="0 0 320 14" preserveAspectRatio="none" aria-hidden="true">
-        <g className="side-cta-flow">
-          <path d={d} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
-          <path d={d} transform="translate(320 0)" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
-        </g>
-      </svg>
     </StoreLink>
     <button type="button" className="side-cta-close" onClick={() => setDismissed(true)} aria-label="Hide this" data-no-redirect><X size={14} /></button>
   </aside>;

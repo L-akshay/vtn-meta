@@ -4,7 +4,7 @@ import { Sparkles } from "../icons";
 import { gsap, ScrollTrigger, SplitText, loadStoryPlugins, tiers, useGSAP, type StoryPlugins } from "@/lib/gsap";
 import { DUR, EASE } from "@/lib/motion";
 import { trackOnce } from "@/lib/analytics";
-import { wavePath } from "@/lib/wave";
+import { WaveBars } from "../WaveBars";
 
 /* ---------- Content: one words array, two layouts ---------- */
 type Token = { id: string; text: string; filler?: boolean; drop?: boolean };
@@ -80,14 +80,14 @@ export function Story() {
     const pin = q<HTMLElement>(".story-pin")[0];
     const card = q<HTMLElement>(".story-card")[0];
     const wave = q<SVGSVGElement>(".story-wave")[0];
-    const wavePathEl = q<SVGPathElement>(".story-wave path")[0];
+    const waveBarEls = q<SVGRectElement>(".story-wave rect");
     const raw = q<HTMLElement>(".story-raw")[0];
     const clean = q<HTMLElement>(".story-clean")[0];
     const summary = q<HTMLElement>(".story-summary")[0];
     const check = q<SVGPathElement>(".story-check-path")[0];
     const fmtLabel = q<HTMLElement>(".fmt-label")[0];
     const captions = q<HTMLElement>(".story-caption");
-    if (!pin || !card || !wave || !wavePathEl || !raw || !clean || !summary || !check || !fmtLabel) return;
+    if (!pin || !card || !wave || !waveBarEls.length || !raw || !clean || !summary || !check || !fmtLabel) return;
     const rawWords = gsap.utils.toArray<HTMLElement>(".sw", raw);
     const cleanWords = gsap.utils.toArray<HTMLElement>(".sw", clean);
     const fillers = rawWords.filter(el => el.classList.contains("is-filler"));
@@ -102,7 +102,7 @@ export function Story() {
 
       if (tier === "reduced") {
         // Final state, no pin, no scrub.
-        gsap.set(wavePathEl, { drawSVG: "100%" });
+        gsap.set(waveBarEls, { scaleY: 1 });
         gsap.set(raw, { display: "none" });
         gsap.set(clean, { visibility: "visible" });
         gsap.set(summary, { opacity: 1, y: 0 });
@@ -125,13 +125,13 @@ export function Story() {
       const build = () => {
         master.clear();
         // Rebuilds happen on refresh; wipe inline state first so from-values never target stale values.
-        gsap.set([...rawWords, ...cleanWords, ...strikes, ...puncts, ...metas, summary, check, wavePathEl, card, raw, clean], { clearProps: "all" });
+        gsap.set([...rawWords, ...cleanWords, ...strikes, ...puncts, ...metas, ...waveBarEls, summary, check, card, raw, clean], { clearProps: "all" });
         gsap.set(clean, { visibility: "hidden" });
         gsap.set(raw, { display: "block", opacity: 1 });
         // Captions: first visible, the rest waiting below their masks.
         captions.forEach((c, i) => gsap.set(lines(i), { yPercent: i === 0 ? 0 : 100 }));
         gsap.set(captions, { visibility: "visible" });
-        gsap.set(wavePathEl, { drawSVG: "0%" });
+        gsap.set(waveBarEls, { scaleY: 0 });
         gsap.set(summary, { opacity: 0, y: 36 });
         gsap.set(check, { drawSVG: "0%" });
         gsap.set(strikes, { scaleX: 0 });
@@ -148,7 +148,7 @@ export function Story() {
 
         // a) You talk. The waveform draws itself.
         master.addLabel("start")
-          .to(wavePathEl, { drawSVG: "100%", duration: 1.2, ease: "none" }, "start+=0.1")
+          .to(waveBarEls, { scaleY: 1, duration: 0.5, ease: EASE.out, stagger: { each: 0.016, from: "start" } }, "start+=0.1")
           .addLabel("a");
         beat("a");
 
@@ -256,7 +256,7 @@ export function Story() {
         <div className="story-phone">
           <div className="story-card">
             <div className="story-recorder">
-              <svg className="story-wave" viewBox="0 0 320 56" preserveAspectRatio="none" aria-hidden="true"><path d={wavePath()} fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" /></svg>
+              <WaveBars count={56} height={44} className="story-wave" />
             </div>
             <div className="story-text">
               <p className="story-raw">{WORDS.map((token, i) => <span key={token.id}>{i > 0 && " "}<Word token={token} /></span>)}</p>

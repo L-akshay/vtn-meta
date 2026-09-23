@@ -6,9 +6,13 @@ import { DUR, EASE } from "@/lib/motion";
 import { trackOnce } from "@/lib/analytics";
 import type { Campaign } from "@/lib/variants";
 import type { Demo } from "@/lib/demo";
+import { waveBars } from "@/lib/wave";
 
 const BARS = 24;
-const rest = (i: number) => 0.1 + 0.1 * Math.abs(Math.sin(i * 1.3));
+// Resting heights are the recorded waveform itself, so a transcribed note looks like a take that
+// was captured rather than a flat line. Live amplitude modulates this shape instead of replacing it.
+const REST = waveBars(BARS);
+const rest = (i: number) => REST[i];
 
 type Controls = { enterAudio(): void; exitAudio(): void };
 
@@ -59,8 +63,9 @@ export function LiveNoteCard({ campaign, demo }: { campaign: Campaign; demo: Dem
         const a = live.amp;
         for (let i = 0; i < BARS; i++) {
           const noise = 0.5 + 0.5 * Math.sin(time * 9 + i * 0.8) * Math.sin(time * 3.7 + i * 1.9 + 1.2);
-          const envelope = 0.35 + 0.65 * Math.sin((i / (BARS - 1)) * Math.PI);
-          toY[i](rest(i) + a * (0.15 + 0.85 * noise) * envelope);
+          const shape = REST[i];
+          // a = 0 rests on the recorded shape; a = 1 makes that same shape speak.
+          toY[i](shape * (1 - a) + shape * (0.4 + 0.75 * noise) * a * 1.1);
         }
         glowTo?.(0.26 + a * 0.74);
       };

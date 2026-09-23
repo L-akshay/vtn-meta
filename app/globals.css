@@ -132,6 +132,9 @@ h2 { font-size: 34px; line-height: 1.08; letter-spacing: -.035em; font-weight: 6
 .sticky-cta-link { flex: 1; gap: 10px; min-height: 48px; padding-block: 10px; }
 .sb-mic { display: grid; place-items: center; width: 26px; height: 26px; flex: none; border-radius: 50%; background: rgb(255 255 255 / 22%); }
 @media (prefers-reduced-motion: reduce) {
+  /* The veil only uncovers the headline by animating. With animations off it would sit there as an
+     opaque block and hide the h1 completely, so it must not render at all. */
+  :root:not([data-motion="on"]) .h1-veil,
   :root:not([data-motion="on"]) .h1-cursor { display: none; }
 }
 @media (min-width: 768px) {
@@ -336,9 +339,6 @@ h2 { font-size: 34px; line-height: 1.08; letter-spacing: -.035em; font-weight: 6
   .side-cta-copy { display: grid; gap: 1px; }
   .side-cta-name { font-size: 14px; font-weight: 600; letter-spacing: -.01em; color: var(--ink); }
   .side-cta-note { font-size: 11.5px; color: var(--ink-2); }
-  .side-cta-wave { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 9px; color: var(--accent); opacity: .85; overflow: hidden; }
-  .side-cta-flow { transform-box: view-box; transform: translateX(0); }
-  .side-cta.is-visible .side-cta-flow { animation: wave-flow 7.5s linear infinite; }
   .side-cta-close { position: absolute; top: 4px; right: 4px; width: 28px; height: 28px; display: grid; place-items: center; border: 0; background: transparent; color: var(--ink-2); border-radius: 50%; }
   .side-cta-close:hover { color: var(--ink); background: var(--bg-2); }
 }
@@ -391,3 +391,6 @@ h2 { font-size: 34px; line-height: 1.08; letter-spacing: -.035em; font-weight: 6
 
 .footer-cta { display: inline-flex; align-items: center; min-height: 48px; font-size: 12px; font-weight: 600; color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
 .footer-cta:hover { color: var(--action); }
+
+/* Bars scale about their own centre, so a rect grows both ways like a recorder level. */
+.story-wave rect, .rail-wave rect, .final-wave rect, .inline-cta-wave rect { transform-box: fill-box; transform-origin: center; }
