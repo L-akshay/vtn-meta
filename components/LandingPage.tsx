@@ -14,6 +14,7 @@ import { Faq } from "./Faq";
 import { FinalCta } from "./FinalCta";
 import { InlineCta } from "./InlineCta";
 import { SideCta } from "./SideCta";
+import { MicCta } from "./MicCta";
 import { DemoPrompt } from "./DemoPrompt";
 import { MotionRoot } from "./motion/MotionRoot";
 
@@ -40,6 +41,6 @@ export function LandingPage({ variant = "default" }: { variant?: Variant }) {
       <FinalCta />
     </main>
     <footer className="footer container" data-global-click-exempt><div className="footer-top"><Wordmark /><div className="legal-links"><a href={PRIVACY}>Privacy</a><a href={TERMS}>Terms</a></div></div><div className="footer-bottom"><p>© 2026 VoiceToNotes</p><StoreLink placement="footer" className="footer-cta">Get the app</StoreLink></div></footer>
-    <StickyBar /><SideCta /><DemoPrompt /><GlobalStoreClick /><MotionRoot /><Analytics variant={variant} />
+    <StickyBar /><MicCta /><SideCta /><DemoPrompt /><GlobalStoreClick /><MotionRoot /><Analytics variant={variant} />
   </ConversionProvider>;
 }

@@ -2,12 +2,11 @@
 import { useRef } from "react";
 import { ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { ctaLabel } from "@/lib/device";
-import { Mic } from "./icons";
 import { StoreLink, useConversion } from "./Conversion";
 
 /**
- * The single mobile CTA. The mic sits inside the button rather than floating beside it, so the
- * corner never shows two controls with two labels for the same action.
+ * The mobile sticky CTA. The mic lives in the floating button in the corner (components/MicCta.tsx),
+ * not in here, so the two never show the same icon twice.
  */
 export function StickyBar() {
   const scope = useRef<HTMLElement>(null);
@@ -45,7 +44,6 @@ export function StickyBar() {
 
   return <aside ref={scope} className="sticky-cta" aria-label="Get VoiceToNotes" aria-hidden="true">
     <StoreLink placement="sticky" className="cta sticky-cta-link">
-      <span className="sb-mic" aria-hidden="true"><Mic size={18} strokeWidth={2} /></span>
       <span>{ctaLabel(os)}</span>
     </StoreLink>
   </aside>;

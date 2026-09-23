@@ -64,7 +64,7 @@
     "Text, demo card, FAQ and use-case card taps do not navigate.",
     "All four use-case cards render their content without relying on an animation.",
     "Reduced motion shows static captions and final states.",
-    "8 smart-link CTAs all point at the configured deep link.",
+    "9 smart-link CTAs all point at the configured deep link.",
     "iPhone Instagram and Android Facebook user-agent labels pass. Real native webviews still require devices.",
     "Static content and the smart-link CTA work without JavaScript (query propagation needs JavaScript)."
   ],

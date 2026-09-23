@@ -132,7 +132,10 @@ try {
   await page.locator('#hero-cta').waitFor();
   const hrefs = await page.locator('[data-store-placement]:not(.store-badge)').evaluateAll(list => list.map(a => a.getAttribute('href')));
   assert.ok(hrefs.length >= 3, 'several smart-link CTAs present, got ' + hrefs.length);
-  assert.equal(await page.locator('.sticky-cta .sb-mic').count(), 1, 'the mic lives inside the sticky CTA');
+  // The mic is the floating corner button, and the sticky bar must not repeat it: one mic, not two.
+  assert.equal(await page.locator('.mic-cta-link').count(), 1, 'the floating mic CTA is present');
+  assert.equal(await page.locator('.sticky-cta .sb-mic').count(), 0, 'the sticky bar does not repeat the mic');
+  assert.ok((await page.locator('.mic-cta-link').getAttribute('href')).startsWith(CTA_DEEP_LINK), 'the mic uses the configured deep link');
   for (const href of hrefs) assert.ok(href.startsWith(CTA_DEEP_LINK), 'CTA points at the configured link, got ' + href);
   report.checks.push(hrefs.length + ' smart-link CTAs all point at the configured deep link.');
 

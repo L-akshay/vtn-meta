@@ -130,7 +130,6 @@ h2 { font-size: 34px; line-height: 1.08; letter-spacing: -.035em; font-weight: 6
 .lc-hint { font-size: 12px; color: var(--ink-2); }
 .sticky-cta { display: flex; align-items: center; height: calc(64px + env(safe-area-inset-bottom)); padding: 0 20px env(safe-area-inset-bottom); }
 .sticky-cta-link { flex: 1; gap: 10px; min-height: 48px; padding-block: 10px; }
-.sb-mic { display: grid; place-items: center; width: 26px; height: 26px; flex: none; border-radius: 50%; background: rgb(255 255 255 / 22%); }
 @media (prefers-reduced-motion: reduce) {
   /* The veil only uncovers the headline by animating. With animations off it would sit there as an
      opaque block and hide the h1 completely, so it must not render at all. */
@@ -394,3 +393,20 @@ h2 { font-size: 34px; line-height: 1.08; letter-spacing: -.035em; font-weight: 6
 
 /* Bars scale about their own centre, so a rect grows both ways like a recorder level. */
 .story-wave rect, .rail-wave rect, .final-wave rect, .inline-cta-wave rect { transform-box: fill-box; transform-origin: center; }
+
+/* ===== Floating mic CTA (phones) ===== */
+.mic-cta { position: fixed; z-index: 31; right: 14px; bottom: calc(64px + env(safe-area-inset-bottom) + 12px);
+  transform: translateY(14px) scale(.94); opacity: 0; visibility: hidden; pointer-events: none;
+  transition: transform var(--dur-ui) var(--ease-out), opacity var(--dur-ui) var(--ease-out), visibility var(--dur-ui); }
+.mic-cta.is-visible { transform: none; opacity: 1; visibility: visible; pointer-events: auto; }
+.has-prompt .mic-cta { opacity: 0; visibility: hidden; pointer-events: none; }
+.mic-cta-link { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 6px 15px 6px 7px; border-radius: 999px;
+  background: var(--bg); color: var(--ink); border: 1px solid #e3e3e8; box-shadow: 0 10px 26px -12px rgb(0 0 0 / .4);
+  font-size: 14px; font-weight: 600; letter-spacing: -.01em; transition: transform var(--dur-press) var(--ease-out); }
+.mic-cta-link:active { transform: scale(.97); }
+.mic-cta-icon { position: relative; width: 36px; height: 36px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--action); color: #fff; }
+.mic-cta-bars { position: absolute; right: 3px; bottom: 4px; display: flex; align-items: flex-end; gap: 1.5px; height: 9px; }
+.mic-cta-bars i { display: block; width: 1.5px; height: 9px; border-radius: 1px; background: #fff; opacity: .85; transform: scaleY(.3); transform-origin: bottom; }
+.mic-cta.is-visible .mic-cta-bars i { animation: mic-bar .9s var(--ease-in-out) infinite alternate; }
+@keyframes mic-bar { from { transform: scaleY(.28); } to { transform: scaleY(1); } }
+@media (min-width: 768px) { .mic-cta { display: none; } }
